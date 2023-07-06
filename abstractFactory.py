@@ -19,4 +19,21 @@ class DogFactory:
         """ Return a Dog Food object"""
         return "Dog Food!"
 
+class PetStore:
+    """ PetStore houses the ability Factory"""
     
+    def __init__(self, pet_factory:None):
+        """ pet_factory is the Abstract Factory"""
+        self._pet_factory = pet_factory
+    
+    def show_pet(self,):
+        """ Utility method to display the details of the object"""
+        
+        # Create the objects from the concrete Factory
+        pet = self._pet_factory.get_pet("My Dog")
+        pet_food = self._pet_factory.get_food()
+        
+        print(f"Our pet is {pet}!")
+        print(f"Our pet says hello by calling { pet.speak()} ")
+        print(f"Its Food is {pet_food}")
+        
