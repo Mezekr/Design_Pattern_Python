@@ -4,7 +4,7 @@ class Dog:
     def __init__(self,name):
         self.name = name
 
-    def speak():
+    def speak(self):
         return "Woof!"
 
 class Cat:
@@ -13,7 +13,7 @@ class Cat:
     def __init__(self,name):
         self.name = name
 
-    def speak():
+    def speak(self):
         return "Meaw!"
 
 def get_pet(pet="dog"):
@@ -24,3 +24,10 @@ def get_pet(pet="dog"):
 
     pets = dict(dog= Dog("Hope"), cat= Cat("Peace"),)
     return pets[pet]
+
+
+my_dog = get_pet("dog")
+print(my_dog.speak())
+
+my_cat = get_pet("cat")
+print(my_cat.speak())
