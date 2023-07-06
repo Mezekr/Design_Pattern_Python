@@ -37,3 +37,13 @@ class PetStore:
         print(f"Our pet says hello by calling { pet.speak()} ")
         print(f"Its Food is {pet_food}")
         
+
+# Create a concrete Factory
+factory = DogFactory()
+
+# Create a pet store housing our abstract factory
+shop = PetStore(factory)
+
+# Invoke the utility method to shaow the details of our pet
+shop.show_pet()
+
