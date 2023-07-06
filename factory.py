@@ -7,11 +7,20 @@ class Dog:
     def speak():
         return "Woof!"
 
+class Cat:
+    """ A simple cat class"""
+
+    def __init__(self,name):
+        self.name = name
+
+    def speak():
+        return "Meaw!"
+
 def get_pet(pet="dog"):
     """The Factory method
     Args:
         pet (str, optional): _description_. Defaults to "dog".
     """
 
-    pets = dict(dog= Dog("Hope"))
+    pets = dict(dog= Dog("Hope"), cat= Cat("Peace"),)
     return pets[pet]
