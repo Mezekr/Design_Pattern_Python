@@ -7,7 +7,7 @@ class Car:
         self.tires = None
         self.engine = None
     def __str__(self):
-        return f'{self.name} | {self.model} | {self.tires}'
+        return f'{self.name} | {self.model} | {self.tires} | {self.engine}'
 
 class Builder:
     """ abstract Builder (Interface) """
@@ -40,7 +40,17 @@ class Director:
         self._builder.create_new_car()
         self._builder.add_name()
         self._builder.add_model()
+        self._builder.add_tires()
         self._builder.add_engine()
 
     def get_car(self):
         return self._builder.car
+
+# Create a concrete builder first
+builder = MazdaBuilder()
+director = Director(builder)
+director.constrct_car()
+car = director.get_car()
+
+# Print the concrete object
+print(car)
