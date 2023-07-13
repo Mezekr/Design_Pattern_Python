@@ -17,3 +17,17 @@ class Builder:
     
     def create_new_car(self):
         self.car = Car()
+
+class MazdaBuilder(Builder):
+    """ Concrete Car builder"""
+    def add_name(self):
+        self.car.name = "Mazda"
+    
+    def add_model(self):
+        self.car.model = "MX-30"
+
+    def add_tires(self):
+        self.car.tires = "Regular tires"
+    
+    def add_engine(self):
+        self.car.engine = "Turbo Engine"
