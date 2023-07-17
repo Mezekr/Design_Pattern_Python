@@ -20,3 +20,16 @@ class Prototype:
         """Clones a registered object and updates its attributes"""
         cloned_obj = copy.deepcopy(self._objects.get(name))
         cloned_obj.__dict__.update(attr)   
+        return cloned_obj
+
+class Car:
+    """ Object to be cloned. """
+    
+    def __init__(self):
+        self.name = "Skylark"
+        self.color = "Black"
+        self.options = "Ex"
+
+    def __str__(self):
+        return f"{self.name}| ({self.color}| {self.options}."
+
