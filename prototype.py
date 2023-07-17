@@ -10,7 +10,7 @@ class Prototype:
 
     def register(self, name, obj):
         """ Registers an object """
-        self.self._objects[name] = obj
+        self._objects[name] = obj
 
     def unregister(self, name):
         """ Unregisters an object """
@@ -24,12 +24,19 @@ class Prototype:
 
 class Car:
     """ Object to be cloned. """
-    
+
     def __init__(self):
         self.name = "Skylark"
         self.color = "Black"
         self.options = "Ex"
 
     def __str__(self):
-        return f"{self.name}| ({self.color}| {self.options}."
+        return f"{self.name}| {self.color}| {self.options}."
 
+
+car_obj = Car()
+prototype = Prototype() 
+prototype.register("Skylark", car_obj)
+cloned_obj =  prototype.clone("Skylark")	
+
+print(cloned_obj)
