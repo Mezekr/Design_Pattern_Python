@@ -16,4 +16,9 @@ def make_blink(function):
         # add new functionality to the function being decorated
 
         return decorator
-        
+    
+
+# Defines the inner function
+def hello_world():
+    """ Original function"""
+    return "Helo, World!"
