@@ -7,7 +7,7 @@ class Eritrean:
         self.name = "Tigrinya"
 
     def speak_tigrinya(self):   
-        return "Selem, Alem!" # means Hello World
+        return "Selam, Alem!" # means Hello World
 
 class British:
     """English speaker""" 	
@@ -32,3 +32,20 @@ class Adapter:
         """Returns the rest of the attributes!"""
         return getattr(self._object, attr)
     
+# List to store the speaker objects
+objects = list()
+
+# Create a Eritrean speaker object
+eritrean = Eritrean()   
+
+# Create a British speaker object
+british = British()
+
+# Append the speaker object to the speaker objectws list
+objects.append(Adapter(eritrean, speak=eritrean.speak_tigrinya))
+objects.append(Adapter(british, speak=british.speak_English))
+
+# test the adapter design pattern 
+
+for object in objects:
+    print(f'{object.name} says, "{object.speak()}"')
